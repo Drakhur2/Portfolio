@@ -16,17 +16,19 @@
     <div class="container">
         <nav>
             <img src="images/symbol.png" class="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#AboutMe">About</a></li>
-                <li><a href="#Services">Services</a></li>
-                <li><a href="#Portfolio">Portfolio</a></li>
-                <li><a href="#Contact">Contact</a></li>
+            <div class="burger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+            <ul id="nav-links">
+                <div class="close" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
+                <li><a href="#" title="home page">Home</a></li>
+                <li><a href="#AboutMe" title="about me">About</a></li>
+                <li><a href="#Services" title="My services">Services</a></li>
+                <li><a href="#Portfolio" title="my works">Portfolio</a></li>
+                <li><a href="#Contact" title="contact me">Contact</a></li>
+                <button onclick="window.open('images/Resume.pdf')" title="Preview Resume PDF">Resume</button>
             </ul>
-            <button id="resume-button" onclick="window.open('images/Resume.pdf', '_blank')">Resume</button>
         </nav>
         <div class="header-text">
-            <p>Computer Scinece student.</p>
+            <p>Computer Science student.</p>
             <h1>Hi, My name is <span>Prince</span><br>Nizeyimana, currently a student at Seattle Pacific University.
             </h1>
         </div>
@@ -63,7 +65,7 @@
                     <ul>
                         <li><span>2021 - Current</span><br>Data structures and algorithms</li>
                         <li><span>2023 -current</span><br>Network technician</li>
-                        <li><span>2022 - current</span><br>c++</li>
+                        <li><span>2022 - Present</span><br/>C++ Developer <a href="https://verify.openedg.org/?id=90EF.jUSG.05An" target="_blank" title="View Certificate">📄</a></li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="Education">
@@ -113,14 +115,14 @@
         <h1 class="subtitle">My Work</h1>
         <div class="work-list">
             <div class="work">
-                <img src="images/Task_mana.png">
+                <img src="images/Task_mana.png" alt="Task Manager">
                 <div class="layers">
                     <h3>Task Manager</h3>
-                    <p>The website creates tasks and stores them. It allows you to edit and save old tasks or delete them
-                        from the databse.
+                    <p>CRUD-based task management system that allows users to create, read, update, and delete tasks. 
+                        It provides a user-friendly interface for managing tasks efficiently.</p>
                     </p>
 
-                    <a href="https://drakhur2.github.io/Task_Manager_project/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="https://drakhur2.github.io/TASK_MAN/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
             <div class="work">
@@ -147,7 +149,7 @@
     </div>
 
 </div>
-"C:\Users\unkno\OneDrive\Desktop\My Personal Portfolio"
+
 <!-- -------------contact---------- -->
 
 <div id="Contact" style="background: #0a323d;">
@@ -156,21 +158,21 @@
             <div class="contact-left">
                 <h1 class="subtitle"> Contact Me</h1>
                 <p>Nizeyimanaprince14@gmail.com</p>
-                <p>0123456789</p>
+                <p>(509)218-9088</p>
                 <div class="social-icons">
-                    <!-- <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
-                    <a href=""><i class="fab fa-twitter"></i></a>
-                    <a href=""><i class="fab fa-instagram"></i></a> -->
+    
                     <a href="https://www.linkedin.com/in/prince-nizeyimana/"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/Drakhur2"><i class="fab fa-github"></i></a>
                 </div>
             </div>
             <div class="contact-right">
-                <form action="https://formspree.io/f/meqyaqvl" method="POST">
+                <form action="https://formspree.io/f/meqyaqvl" method="POST" onsubmit="return showConfirmation()">
+
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="your email" required>
                     <textarea name="message" placeholder=" your Message"></textarea>
                     <button class= "sumit" type="submit">Submit</button>
+                    <p id="confirmation-msg" style="display:none;">Thank you! Your message has been sent.</p>
                 </form>
             </div>
         </div>
@@ -192,6 +194,23 @@
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
     }
+    function showConfirmation() {
+        document.getElementById('confirmation-msg').style.display = 'block';
+        setTimeout(function() {
+            form.reset(); 
+            document.getElementById('confirmation-msg').style.display = 'none';
+        }, 10000); 
+        return true; 
+    }
+      function toggleMenu() {
+        const nav = document.getElementById('nav-links');
+        const burger = document.querySelector('.burger');
+        const closeIcon = document.querySelector('.close');
+
+        nav.classList.toggle('show');
+        burger.style.display = nav.classList.contains('show') ? 'none' : 'block';
+        closeIcon.style.display = nav.classList.contains('show') ? 'block' : 'none';
+      }
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
