@@ -56,18 +56,13 @@ body{
     padding: 10px 10px;
     padding: 20px;
     border-radius: 10px;
-  
 }
 .contact-left{
     width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
-
     position: relative;
-   
-
-
 }
 .contact-right{
     width: 50%;
@@ -161,7 +156,7 @@ nav ul li a:hover::after{
     width: 100%;
 }
 .header-text{
-    margin-top: 4%;
+    margin-top: 5%;
     font-size: 30px;
 
 }
@@ -173,7 +168,7 @@ nav ul li a:hover::after{
 .header-text h3{
     font-size: 20px;
     margin-top: 10px;
-        -webkit-background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-image: linear-gradient(to right, var(--light-blue), var(--light));
     font-weight: 300;
@@ -189,8 +184,7 @@ h1,p{
     font-size: 60px;
     font-weight: 600;
     line-height: 1.2;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+   
 }
 .header-text h1 span{
     color: black;
@@ -445,8 +439,8 @@ input, button{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: 0.5s;
-  }
-  textarea{
+}
+textarea{
     font-family: 'Poppins', sans-serif;
     font-style: italic;
     outline: none;
@@ -454,12 +448,12 @@ input, button{
     color: var(--light);
     background-color: linear-gradient(to right, var(--light-blue), var(--purple));
     aspect-ratio: 90/82;
-  }
-  textarea:focus{
+ }
+textarea:focus{
     background-color: var(--darkest);
-  }
+}
 
-  .burger {
+.burger {
     display: block;
     position: relative;
     font-size: 24px;
@@ -467,13 +461,13 @@ input, button{
     color: var(--light);
     margin-left: auto;
     
-  }
-    .burger:hover {
+}
+.burger:hover {
         color: var(--purple);
-    }
-    .burger:active {
+ }
+.burger:active {
         color: var(--light-blue);
-    }
+}
 .close{
     display: none;
     font-size: 24px;
